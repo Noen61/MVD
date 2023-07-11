@@ -102,7 +102,7 @@ sh scripts/run_mvd.sh
 
 Computational cost:
 
-    Time:  around 13h,  2.5h per epoch
+    Time:   around 13h,  2.5h per epoch
 
     Memory: 35G per GPU
 
