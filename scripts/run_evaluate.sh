@@ -1,0 +1,21 @@
+python -m torch.distributed.launch --nproc_per_node=4 main.py \
+--do_eval \
+--kb zeshel \
+--task_name retriever \
+--data_dir data/zeshel \
+--entity_data_dir data/zeshel/entity \
+--output_dir output/retriever \
+--bert_model bert-base-uncased \
+--pretrain_retriever output/retriever/retriever.bin \
+--max_seq_length 128 \
+--infer_view_type local \
+--train_view_type local \
+--max_ent_length 512 \
+--max_view_length 40 \
+--max_view_num 10 \
+--eval_batch_size 1024 \
+--num_train_epochs 40 \
+--top_k 100 \
+--faiss \
+--seed 10000 \
+--do_lower_case

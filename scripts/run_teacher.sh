@@ -1,0 +1,24 @@
+python -m torch.distributed.launch --nproc_per_node=4 main.py \
+--do_train \
+--kb zeshel \
+--task_name teacher \
+--data_dir data/zeshel \
+--entity_data_dir data/zeshel/entity \
+--output_dir output/teacher \
+--bert_model bert-base-uncased \
+--max_seq_length 128 \
+--cand_num 16 \
+--infer_view_type local \
+--train_view_type local \
+--max_ent_length 128 \
+--max_view_length 40 \
+--max_view_num 10 \
+--num_train_epochs 3 \
+--train_batch_size 1 \
+--gradient_accumulation_steps 1 \
+--learning_rate 2e-5 \
+--eval_per_epoch 2 \
+--eval_batch_size 16 \
+--best_checkpoint_metric accuracy \
+--seed 10000 \
+--do_lower_case
