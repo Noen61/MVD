@@ -211,7 +211,7 @@ def main():
     task_name = args.task_name.lower()
     cand_num = args.cand_num
     view_type = args.train_view_type
-    kb = args.task_nakbme.lower()
+    kb = args.kb.lower()
 
     if task_name not in output_modes:
         raise ValueError("Task not found: %s" % task_name)

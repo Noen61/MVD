@@ -193,7 +193,7 @@ class ZeshelProcessor(DataProcessor):
         examples = list()
         for (i, line) in enumerate(lines):
           item = json.loads(line)
-          if self.task_name != "retriever" or (do_train == False and self.task_name == 'mvd'):
+          if self.task_name == "retriever" or (do_train == False and self.task_name == 'mvd'):
             entity_idx = item['label_id']
             mention = item['mention']
             mention_left = item['context_left']
